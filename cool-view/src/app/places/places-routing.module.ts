@@ -13,7 +13,7 @@ const routes: Routes = [
         children:[
           {
             path: '',
-            loadChildren: './discover/discover.module#DiscoverPageModule'
+            loadChildren: () => import('./discover/discover.module').then( m => m.DiscoverPageModule)
           },
           {
             path: ':placeId',
